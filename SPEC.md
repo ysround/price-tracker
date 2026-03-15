@@ -556,15 +556,65 @@ Closes #xxx
 
 ---
 
-## 10. 参考資料
+## 10. 設計判断記録（ADR）
 
-### 10.1 技術ドキュメント
+### ADR-001: ドメイン駆動設計の採用
+
+**日付**: 2026-03-15
+**ステータス**: 決定済み
+
+**背景**
+価格比較アプリのビジネスロジック（値オブジェクト、エンティティ、集約）が複雑になる可能性がある。
+
+**決定**
+ドメイン駆動設計（DDD）を採用し、ドメイン層・アプリケーション層・インフラ層の3層アーキテクチャを採用する。
+
+**理由**
+- ビジネスロジックとインフラストラクチャの明確な分離
+- テストが容易になる
+- 将来的な拡張性が高い
+
+**影響範囲**
+- src/domain/ ディレクトリ構成
+- Repositoryパターンの導入
+- 値オブジェクトの積極的な活用
+
+---
+
+### ADR-002: 画像ストレージにCloudinaryを採用
+
+**日付**: 2026-03-15
+**ステータス**: 決定済み
+
+**背景**
+商品写真の保存先としてFirebase Storageを予定していたが、2024年以降の仕様変更により新規プロジェクトではSparkプラン（無料）でFirebase Storageが利用不可となった。
+
+**決定**
+Cloudinaryの無料枠を採用する。
+
+**理由**
+- 無料枠のみで完結させるという要件を満たせる
+- 無料枠で25GB/月のストレージと帯域が利用可能
+- アップロードAPIが充実しており実装が容易
+- Next.jsとの統合実績が多い
+
+**影響範囲**
+- src/infrastructure/storage/ を新設
+- 環境変数に CLOUDINARY_CLOUD_NAME, CLOUDINARY_UPLOAD_PRESET を追加
+- .env.local.example を更新
+- Firebase Storage関連の実装は不要
+
+---
+
+## 11. 参考資料
+
+### 11.1 技術ドキュメント
 - [Next.js 14 Documentation](https://nextjs.org/docs)
 - [Firebase Documentation](https://firebase.google.com/docs)
 - [Tailwind CSS](https://tailwindcss.com/docs)
 - [Vitest](https://vitest.dev/)
 
-### 10.2 設計パターン
+### 11.2 設計パターン
 - Domain-Driven Design (Eric Evans)
 - Clean Architecture (Robert C. Martin)
 
@@ -575,3 +625,5 @@ Closes #xxx
 | バージョン | 日付 | 変更内容 | 作成者 |
 |----------|------|---------|--------|
 | 1.0 | 2026-03-15 | 初版作成 | - |
+| 1.1 | 2026-03-15 | ADR-001追加（DDD採用） | - |
+| 1.2 | 2026-03-15 | ADR-002追加（Cloudinary採用） | - |
