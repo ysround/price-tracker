@@ -15,7 +15,11 @@
       "Bash(npx vitest run src/domain/valueObjects/ProductName.test.ts)",
       "Bash(npx vitest run src/domain/valueObjects/CategoryName.test.ts)",
       "Bash(npx vitest run src/domain/valueObjects/StoreName.test.ts)",
-      "Bash(npx vitest run src/domain/valueObjects/Money.test.ts)"
+      "Bash(npx vitest run src/domain/valueObjects/Money.test.ts)",
+      "Bash(npx vitest run src/domain/models/Category.test.ts)",
+      "Bash(npx vitest run src/domain/models/Store.test.ts)",
+      "Bash(npx vitest run src/domain/models/Product.test.ts)",
+      "Bash(npx vitest run src/domain/models/Price.test.ts)"
     ],
     "deny": [],
     "ask": []
