@@ -19,7 +19,9 @@
       "Bash(npx vitest run src/domain/models/Category.test.ts)",
       "Bash(npx vitest run src/domain/models/Store.test.ts)",
       "Bash(npx vitest run src/domain/models/Product.test.ts)",
-      "Bash(npx vitest run src/domain/models/Price.test.ts)"
+      "Bash(npx vitest run src/domain/models/Price.test.ts)",
+      "Bash(npm run build)",
+      "Bash(npm install -D @eslint/eslintrc)"
     ],
     "deny": [],
     "ask": []

@@ -1,5 +1,5 @@
 // Repository implementations
-export * from './CategoryRepository'
-export * from './StoreRepository'
-export * from './ProductRepository'
-export * from './PriceRepository'
+export { CategoryRepository } from './CategoryRepository'
+export { StoreRepository } from './StoreRepository'
+export { ProductRepository } from './ProductRepository'
+export { PriceRepository } from './PriceRepository'
