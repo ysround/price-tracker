@@ -9,7 +9,13 @@
       "Bash(npm install firebase)",
       "Bash(npm install -D vitest @vitest/coverage-v8 @testing-library/react @testing-library/jest-dom @testing-library/user-event jsdom)",
       "Bash(npm install -D @tailwindcss/postcss)",
-      "Bash(npm run dev)"
+      "Bash(npm run dev)",
+      "Bash(npm run test)",
+      "Bash(npx vitest run)",
+      "Bash(npx vitest run src/domain/valueObjects/ProductName.test.ts)",
+      "Bash(npx vitest run src/domain/valueObjects/CategoryName.test.ts)",
+      "Bash(npx vitest run src/domain/valueObjects/StoreName.test.ts)",
+      "Bash(npx vitest run src/domain/valueObjects/Money.test.ts)"
     ],
     "deny": [],
     "ask": []
